@@ -87,6 +87,8 @@ export async function POST(request: Request) {
 
   const to = queryMap["From"];
   const from = queryMap["To"];
+  responseText.replace(/['"]/g, '')
+  responseText.replace('Andrea:', '');
   console.log("responseText: ", responseText);
   await twilioClient.messages
     .create({
